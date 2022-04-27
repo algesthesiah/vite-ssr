@@ -1,6 +1,6 @@
-const fs = require('fs')
-const { IncomingMessage } = require('http')
-const path = require('path')
+import fs from 'fs';
+import path from 'path'
+import { IncomingMessage } from 'http'
 const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD
 const { Helmet } = require('react-helmet')
 function queryStringToObject(query) {
@@ -43,6 +43,7 @@ async function createViteHandle({
           template: indexHTML,
           dev,
           vite,
+          dist,
         })
       })
     } else {
@@ -62,7 +63,7 @@ async function createViteHandle({
  *
  * @param {IncomingMessage} req
  * @param {*} res
- * @param {{template: any; dev: boolean; vite: import('vite').ViteDevServer;dist: string}} param2
+ * @param {{template: any; dev: boolean; vite: import('vite').ViteDevServer;dist?: string}} param2
  * @returns
  */
 

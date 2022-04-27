@@ -1,19 +1,21 @@
-const http = require('http')
-const path = require('path')
-const createViteHandle = require('./vite-handle')
+import http from 'http'
+import { resolve, join } from 'path'
+import createViteHandle from './vite-handle'
 
 const isProd = process.env.NODE_ENV === 'production'
 const port = +process.env.PORT || 3000
-const resolve = (p) => path.resolve(__dirname, p)
+
 const getCwd = () => {
-  return resolve(process.cwd(), process.env.APP_ROOT ?? '')
+  return resolve(process.cwd())
 }
+
 const rootUrl = getCwd()
+
 createViteHandle({
   index: isProd
-    ? path.join(rootUrl, 'dist/client/index.html')
-    : path.join(rootUrl, 'index.html'),
-  dist: path.join(rootUrl, 'dist'),
+    ? join(rootUrl, 'dist/client/index.html')
+    : join(rootUrl, 'index.html'),
+  dist: join(rootUrl, 'dist'),
   dev: !isProd,
 }).then((handle) => {
   const app = http.createServer((req, res) => {

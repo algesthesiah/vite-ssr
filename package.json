@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "node ./script/server",
     "build": "yarn build:client && yarn build:server",
+    "dev": "nodemon --watch ./script/server.ts --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm ./script/server.ts'",
     "build:client": "vite build --outDir dist/client --ssrManifest",
     "build:server": "vite build --outDir dist/server --ssr src/entry-server.tsx",
     "serve": "cross-env NODE_ENV=production node ./script/server"
@@ -17,13 +17,15 @@
     "compression": "^1.7.4",
     "esno": "^0.14.1",
     "lodash": "^4.17.21",
+    "nodemon": "^2.0.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-router": "^5.2.0",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
-    "serve-static": "^1.14.1"
+    "serve-static": "^1.14.1",
+    "ts-node": "^10.7.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.182",
@@ -34,6 +36,7 @@
     "@types/react-router-dom": "^5.1.7",
     "@vitejs/plugin-legacy": "^1.8.1",
     "autoprefixer": "10.2.6",
+    "base-ts-config": "^1.0.6",
     "consola": "^2.15.3",
     "cross-env": "^7.0.3",
     "postcss": "8.3.5",

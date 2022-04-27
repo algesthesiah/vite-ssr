@@ -1,22 +1,8 @@
 {
+  "extends": "base-ts-config",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "noImplicitAny": false,
+    "jsx": "react-jsxdev",
     "baseUrl": "./src",
-    "skipLibCheck": true,
-    "noEmit": true,
-    "skipDefaultLibCheck": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
     "paths": {
       "~": [
         "./src"
@@ -26,13 +12,10 @@
       ]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-  ],
+  "include": ["src/**/*", "types/*", "*"],
   "exclude": [
     "node_modules",
-    "assets"
+    "assets",
+    "dist"
   ]
 }
