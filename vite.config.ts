@@ -1,11 +1,11 @@
 // https://vitejs.dev/config/
 import { omitBy } from 'lodash'
-import { defineConfig, loadEnv, UserConfig, splitVendorChunkPlugin } from 'vite'
+import { defineConfig, loadEnv, UserConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import react from '@vitejs/plugin-react'
-import { dependencies } from './package.json'
 import { createStyleImportPlugin } from 'vite-plugin-style-import'
 import legacy from '@vitejs/plugin-legacy'
+import ssr from 'vite-plugin-ssr/plugin'
 
 // Packages we want in the vendor aka the deps needed in the entire app.
 const globalVendorPackages = [
@@ -45,12 +45,8 @@ export default ({ mode }) => {
           },
         ],
       }),
-      splitVendorChunkPlugin(),
-      react({
-        // babel: {
-        //   babelrc: true,
-        // },
-      }),
+      react(),
+      ssr(),
       tsconfigPaths(),
     ],
     build: {

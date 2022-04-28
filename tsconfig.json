@@ -1,21 +1,13 @@
 {
   "extends": "base-ts-config",
   "compilerOptions": {
-    "jsx": "react-jsxdev",
     "baseUrl": "./src",
     "paths": {
-      "~": [
-        "./src"
-      ],
-      "~/*": [
-        "./src/*"
-      ]
+      "~": ["./src"],
+      "~/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "types/*", "*"],
-  "exclude": [
-    "node_modules",
-    "assets",
-    "dist"
-  ]
+  "types": ["vite/client", "react/next", "react-dom/next"],
+  "include": ["src/**/*", "types/*", "*", "./package.json"],
+  "exclude": ["node_modules", "assets", "dist"]
 }

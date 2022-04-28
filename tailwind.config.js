@@ -1,8 +1,6 @@
 module.exports = {
-  purge: [
-    __dirname + '/**/*.tsx',
-  ],
-  darkMode: false, // or 'media' or 'class'
+  content: [`${__dirname}/**/*.tsx`],
+  media: false, // or 'media' or 'class'
   mode: 'jit',
   important: true, // important in prod is must be
 

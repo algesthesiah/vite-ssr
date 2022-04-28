@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .absolute-translate-1\/2 {
+    @apply absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2;
+  }
+}
+
+@layer base {
+  a {
+    color: #37a0ff;
+  }
+
+  svg {
+    display: inline-block;
+  }
+
+  img {
+    display: inline-block;
+    width: auto;
+    height: auto;
+  }
+}
