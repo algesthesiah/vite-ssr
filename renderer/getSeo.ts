@@ -1,4 +1,4 @@
-export default (pageContext: {
+export const getSeo = (pageContext: {
   pageExports: { documentProps?: { title: string; description: string } }
   documentProps?: { title: string; description: string }
 }) => {

@@ -3,7 +3,8 @@ import type { Movie } from '../types'
 
 export { Page }
 
-function Page({ movies }: { movies: Movie[] }) {
+function Page({ movies, nmb }: { movies: Movie[] }) {
+  console.log('nmb', nmb)
   return (
     <>
       <h1>Star Wars Movies</h1>

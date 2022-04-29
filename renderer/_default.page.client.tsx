@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOMClient from 'react-dom/client'
 import { useClientRouter } from 'vite-plugin-ssr/client/router'
 import type { PageContextBuiltInClient } from 'vite-plugin-ssr/client/router'
-import { PageShell } from './PageShell'
-import getSeo from './getSeo'
+import { Layout } from './Layout'
+import { getSeo } from './getSeo'
 import type { PageContext } from './types'
 
 let root: ReactDOMClient.Root
@@ -20,19 +20,25 @@ function onTransitionEnd() {
 const { hydrationPromise } = useClientRouter({
   render(pageContext: PageContextBuiltInClient & PageContext) {
     const { Page, pageProps } = pageContext
-    const page = (
-      <PageShell pageContext={pageContext}>
-        <Page {...pageProps} />
-      </PageShell>
-    )
+
     const container = document.getElementById('page-view')!
     if (pageContext.isHydration) {
-      root = ReactDOMClient.hydrateRoot(container, page)
+      root = ReactDOMClient.hydrateRoot(
+        container,
+        <Layout pageContext={pageContext}>
+          <Page {...pageProps} />
+        </Layout>,
+      )
     } else {
       if (!root) {
         root = ReactDOMClient.createRoot(container)
       }
-      root.render(page)
+      const app = (
+        <Layout pageContext={pageContext}>
+          <Page {...{ ...pageProps, ...{ nmb: 1 } }} />
+        </Layout>
+      )
+      root.render(app)
     }
     const { title, description } = getSeo(pageContext)
     document.title = title

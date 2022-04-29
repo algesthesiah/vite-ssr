@@ -1,12 +1,12 @@
 import React from 'react'
 import { PageContextProvider } from './usePageContext'
-import './PageShell.css'
+import '../style/layout.css'
 import type { PageContext } from './types'
 import { Link } from './Link'
 
-export { PageShell }
+export { Layout }
 
-function Layout({ children }: { children: React.ReactNode }) {
+function Navbar({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
@@ -63,7 +63,7 @@ function Logo() {
   )
 }
 
-function PageShell({
+function Layout({
   pageContext,
   children,
 }: {
@@ -73,7 +73,7 @@ function PageShell({
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
-        <Layout>
+        <Navbar>
           <Sidebar>
             <Logo />
             <Link href="/">Welcome</Link>
@@ -81,7 +81,7 @@ function PageShell({
             <Link href="/hello/alice">Routing</Link>
           </Sidebar>
           <Content>{children}</Content>
-        </Layout>
+        </Navbar>
       </PageContextProvider>
     </React.StrictMode>
   )

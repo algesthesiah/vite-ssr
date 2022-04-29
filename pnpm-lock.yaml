@@ -4,6 +4,7 @@ specifiers:
   '@arco-design/web-react': ^2.32.1
   '@commitlint/cli': ^16.2.3
   '@commitlint/config-conventional': ^16.2.1
+  '@tailwindcss/line-clamp': ^0.4.0
   '@types/lodash': ^4.14.182
   '@types/node': ^15.12.4
   '@types/react': ^18.0.8
@@ -36,6 +37,7 @@ specifiers:
 
 dependencies:
   '@arco-design/web-react': 2.32.1_47ae209ab5c2ea051c9a2540426c6b2f
+  '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.0.24
   '@vitejs/plugin-react': 1.3.1
   axios: 0.27.2
   cross-fetch: 3.1.5
@@ -683,6 +685,14 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       defer-to-connect: 1.1.3
+    dev: false
+
+  /@tailwindcss/line-clamp/0.4.0_tailwindcss@3.0.24:
+    resolution: {integrity: sha512-HQZo6gfx1D0+DU3nWlNLD5iA6Ef4JAXh0LeD8lOGrJwEDBwwJNKQza6WoXhhY1uQrxOuU8ROxV7CqiQV4CoiLw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.0.24
     dev: false
 
   /@tsconfig/node10/1.0.8:

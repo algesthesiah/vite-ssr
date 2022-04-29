@@ -2,8 +2,8 @@ import ReactDOMServer from 'react-dom/server'
 import React from 'react'
 import { escapeInject } from 'vite-plugin-ssr'
 import type { PageContextBuiltIn } from 'vite-plugin-ssr'
-import { PageShell } from './PageShell'
-import getSeo from './getSeo'
+import { Layout } from './Layout'
+import { getSeo } from './getSeo'
 import type { PageContext } from './types'
 
 export { render }
@@ -15,9 +15,9 @@ function render(pageContext: PageContextBuiltIn & PageContext) {
   const { Page, pageProps } = pageContext
   // TODO: vite-plugin-ssr 待支持 renderToPipeableStream
   const stream = ReactDOMServer.renderToStaticNodeStream(
-    <PageShell pageContext={pageContext}>
+    <Layout pageContext={pageContext}>
       <Page {...pageProps} />
-    </PageShell>,
+    </Layout>,
   )
 
   const { title, description } = getSeo(pageContext)
