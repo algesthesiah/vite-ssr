@@ -11,7 +11,6 @@ module.exports = {
     'import/resolver': {
       typescript: {},
       alias: {
-        map: [],
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
       },
     },

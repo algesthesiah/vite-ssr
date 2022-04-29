@@ -77,6 +77,7 @@ function Layout({
           <Sidebar>
             <Logo />
             <Link href="/">Welcome</Link>
+            <Link href="/star-wars/movie">movie</Link>
             <Link href="/star-wars">Data Fetching</Link>
             <Link href="/hello/alice">Routing</Link>
           </Sidebar>

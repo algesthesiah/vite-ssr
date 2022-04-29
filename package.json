@@ -52,6 +52,6 @@
     "stylelint-plugin-standard": "~1.0.4",
     "vite": "^2.9.6",
     "vite-plugin-style-import": "^2.0.0",
-    "vite-tsconfig-paths": "3.3.13"
+    "vite-tsconfig-paths": "^3.4.1"
   }
 }

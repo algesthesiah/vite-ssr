@@ -33,7 +33,7 @@ specifiers:
   vite: ^2.9.6
   vite-plugin-ssr: ^0.3.64
   vite-plugin-style-import: ^2.0.0
-  vite-tsconfig-paths: 3.3.13
+  vite-tsconfig-paths: ^3.4.1
 
 dependencies:
   '@arco-design/web-react': 2.32.1_47ae209ab5c2ea051c9a2540426c6b2f
@@ -70,7 +70,7 @@ devDependencies:
   stylelint-plugin-standard: 1.0.4
   vite: 2.9.6
   vite-plugin-style-import: 2.0.0_vite@2.9.6
-  vite-tsconfig-paths: 3.3.13_vite@2.9.6
+  vite-tsconfig-paths: 3.4.1_vite@2.9.6
 
 packages:
 
@@ -7229,8 +7229,8 @@ packages:
       vite: 2.9.6
     dev: true
 
-  /vite-tsconfig-paths/3.3.13_vite@2.9.6:
-    resolution: {integrity: sha512-G7OO+1g2H6xVN61RIp1xFjvciqJoF5cGKcWfP6ZOZFeA8QRy2X7yaGUZLhXtKxNLEsR2MthDm7KwSNTKQHzwvA==}
+  /vite-tsconfig-paths/3.4.1_vite@2.9.6:
+    resolution: {integrity: sha512-SgK3/pnTuJ3i+gMSAWLR6VCPSw26bnxawrmXGvCDjJgk8MAQgmbCrFrAzfwbwZBXSqSuvWEuX04Wt73qJKx8fQ==}
     peerDependencies:
       vite: '>2.0.0-0'
     dependencies:

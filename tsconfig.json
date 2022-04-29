@@ -1,13 +1,14 @@
 {
   "extends": "base-ts-config",
   "compilerOptions": {
-    "baseUrl": "./src",
+    "composite": false,
+    "baseUrl": ".",
     "paths": {
-      "~": ["./src"],
-      "~/*": ["./src/*"]
+      "@/*": ["./*"]
     }
   },
   "types": ["vite/client", "react/next", "react-dom/next"],
-  "include": ["src/**/*", "types/*", "*", "./package.json"],
-  "exclude": ["node_modules", "assets", "dist"]
+  "include": ["./**/*", "./package.json"],
+  "exclude": ["node_modules", "assets", "dist"],
+  "extensions": [".ts", ".tsx", ".js", ".jsx"]
 }

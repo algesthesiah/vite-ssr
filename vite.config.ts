@@ -6,7 +6,6 @@ import react from '@vitejs/plugin-react'
 import { createStyleImportPlugin } from 'vite-plugin-style-import'
 import legacy from '@vitejs/plugin-legacy'
 import ssr from 'vite-plugin-ssr/plugin'
-
 // Packages we want in the vendor aka the deps needed in the entire app.
 const globalVendorPackages = [
   'react',
@@ -69,11 +68,5 @@ export default ({ mode }) => {
         generateScopedName: '[local]-[hash:base64:5]',
       },
     },
-    // ssr: {
-    //   external: ['@arco-design/web-react'],
-    // },
-    // resolve: {
-    //   alias: {},
-    // },
   } as UserConfig)
 }

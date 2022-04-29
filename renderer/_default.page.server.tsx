@@ -6,11 +6,7 @@ import { Layout } from './Layout'
 import { getSeo } from './getSeo'
 import type { PageContext } from './types'
 
-export { render }
-export { passToClient }
-
 const passToClient = ['pageProps', 'documentProps', 'someAsyncProps']
-
 function render(pageContext: PageContextBuiltIn & PageContext) {
   const { Page, pageProps } = pageContext
   // TODO: vite-plugin-ssr 待支持 renderToPipeableStream
@@ -44,3 +40,5 @@ function render(pageContext: PageContextBuiltIn & PageContext) {
     })(),
   }
 }
+export { passToClient }
+export { render }
