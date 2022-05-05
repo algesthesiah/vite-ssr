@@ -39,12 +39,12 @@ const { hydrationPromise } = useClientRouter({
         </Layout>
       )
       root.render(app)
+      const { title, description } = getSeo(pageContext)
+      document.title = title
+      document
+        ?.querySelector('meta[name="description"]')
+        ?.setAttribute('content', description)
     }
-    const { title, description } = getSeo(pageContext)
-    document.title = title
-    document
-      ?.querySelector('meta[name="description"]')
-      ?.setAttribute('content', description)
   },
   // onTransitionStart,
   // onTransitionEnd,

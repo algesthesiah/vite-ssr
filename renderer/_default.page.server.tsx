@@ -22,13 +22,12 @@ function render(pageContext: PageContextBuiltIn & PageContext) {
     <html>
       <head>
         <title>${title}</title>
-        <title>${description}</title>
-        <meta name="description" content="We deliver payload to space.">
+        <meta name="description" content="${description}">
       </head>
       <body>
         <div id="page-view">${stream}</div>
       </body>
-    </html>`
+    </html>` as any
 
   return {
     documentHtml,
@@ -40,5 +39,5 @@ function render(pageContext: PageContextBuiltIn & PageContext) {
     })(),
   }
 }
-export { passToClient }
 export { render }
+export { passToClient }

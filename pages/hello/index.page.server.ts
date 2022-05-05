@@ -16,6 +16,9 @@ async function onBeforeRender(pageContext: PageContextBuiltIn) {
   return {
     pageContext: {
       pageProps,
+      documentProps: {
+        title: name,
+      },
     },
   }
 }

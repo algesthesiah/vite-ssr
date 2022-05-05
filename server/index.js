@@ -34,7 +34,10 @@ async function startServer() {
     const url = req.originalUrl
     const pageContextInit = { url }
     const pageContext = await renderPage(pageContextInit)
-    const { httpResponse } = pageContext
+    const { httpResponse, errorWhileRendering } = pageContext
+    if (errorWhileRendering) {
+      console.error(errorWhileRendering)
+    }
     if (!httpResponse) return next()
     const stream = await httpResponse.getNodeStream()
     const { statusCode, contentType } = httpResponse
