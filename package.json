@@ -5,7 +5,8 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "nodemon --watch server --exec 'node server'",
-    "build": "vite build && vite build --ssr",
+    "build": "NODE_OPTIONS=--max-old-space-size=3072 npm run build:run",
+    "build:run": "vite build && vite build --ssr",
     "build:test": "vite build && vite build --ssr --mode test",
     "serve": "cross-env NODE_ENV=production node server"
   },

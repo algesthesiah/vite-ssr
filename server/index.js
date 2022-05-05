@@ -1,5 +1,6 @@
 const express = require('express')
 const { createPageRenderer } = require('vite-plugin-ssr')
+const { extractLocale } = require('./utils/locales')
 
 const isProduction = process.env.NODE_ENV === 'production'
 const root = `${__dirname}/..`
@@ -31,8 +32,11 @@ async function startServer() {
     baseAssets,
   })
   app.get('*', async (req, res, next) => {
-    const url = req.originalUrl
-    const pageContextInit = { url }
+    let url = req.originalUrl
+    const { urlWithoutLocale, locale } = extractLocale(url)
+    url = urlWithoutLocale
+
+    const pageContextInit = { url, locale }
     const pageContext = await renderPage(pageContextInit)
     const { httpResponse, errorWhileRendering } = pageContext
     if (errorWhileRendering) {
