@@ -24,6 +24,6 @@ async function onBeforeRender(pageContext: PageContextBuiltIn) {
 }
 
 function prerender() {
-  const urls = names.map((name) => `/hello/${name}`)
+  const urls = names.map(name => `/hello/${name}`)
   return urls
 }

@@ -27,7 +27,7 @@ const { hydrationPromise } = useClientRouter({
         container,
         <Layout pageContext={pageContext}>
           <Page {...pageProps} />
-        </Layout>,
+        </Layout>
       )
     } else {
       if (!root) {
@@ -41,9 +41,7 @@ const { hydrationPromise } = useClientRouter({
       root.render(app)
       const { title, description } = getSeo(pageContext)
       document.title = title
-      document
-        ?.querySelector('meta[name="description"]')
-        ?.setAttribute('content', description)
+      document?.querySelector('meta[name="description"]')?.setAttribute('content', description)
     }
   },
   // onTransitionStart,

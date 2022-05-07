@@ -1,8 +1,10 @@
 import React from 'react'
+import { t } from '@lingui/macro'
 
 export { Page }
 
 function Page({ name }: { name: string }) {
+  const a = 110
   return (
     <>
       <h1>Hello</h1>
@@ -17,9 +19,9 @@ function Page({ name }: { name: string }) {
           <a href="/hello/jon">/hello/jon</a>
         </li>
       </ul>
+      <div>{t`hello${a}`} </div>
       <p>
-        Parameterized routes can be defined by exporting a route string in{' '}
-        <code>*.page.route.js</code>.
+        Parameterized routes can be defined by exporting a route string in <code>*.page.route.js</code>.
       </p>
     </>
   )

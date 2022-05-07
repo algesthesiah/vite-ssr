@@ -1,0 +1,28 @@
+{
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "sourceLocale": "en",
+  "compileNamespace": "ts",
+  "catalogs": [
+    {
+      "path": "locales/{locale}/messages",
+      "include": [
+        "components",
+        "pages",
+        "helper",
+        "renderer"
+      ]
+    }
+  ],
+  "format": "po",
+  "fallbackLocales": {
+    "default": "en"
+  },
+  "extractBabelOptions": {
+    "presets": [
+      "@babel/preset-typescript"
+    ]
+  }
+}

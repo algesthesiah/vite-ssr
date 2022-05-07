@@ -35,7 +35,6 @@ async function startServer() {
     let url = req.originalUrl
     const { urlWithoutLocale, locale } = extractLocale(url)
     url = urlWithoutLocale
-
     const pageContextInit = { url, locale }
     const pageContext = await renderPage(pageContextInit)
     const { httpResponse, errorWhileRendering } = pageContext

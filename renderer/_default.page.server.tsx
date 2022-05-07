@@ -6,14 +6,14 @@ import { Layout } from './Layout'
 import { getSeo } from './getSeo'
 import type { PageContext } from './types'
 
-const passToClient = ['pageProps', 'documentProps', 'someAsyncProps']
+const passToClient = ['pageProps', 'documentProps', 'someAsyncProps', 'locale']
 function render(pageContext: PageContextBuiltIn & PageContext) {
   const { Page, pageProps } = pageContext
   // TODO: vite-plugin-ssr 待支持 renderToPipeableStream
   const stream = ReactDOMServer.renderToStaticNodeStream(
     <Layout pageContext={pageContext}>
       <Page {...pageProps} />
-    </Layout>,
+    </Layout>
   )
 
   const { title, description } = getSeo(pageContext)

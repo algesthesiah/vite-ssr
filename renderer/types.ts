@@ -8,6 +8,7 @@ export type PageContext = {
     }
   }
   urlPathname: string
+  locale: string
   pageProps: Record<string, unknown>
   documentProps?: {
     title: string

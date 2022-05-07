@@ -1,0 +1,1 @@
+/*eslint-disable*/export const messages={"hello{a}":["hello",["a"]]};

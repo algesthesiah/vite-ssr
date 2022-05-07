@@ -33,7 +33,6 @@ const af = () => {
 async function onBeforeRender(pageContext: PageContextBuiltIn) {
   const a = await af()
   let movie = a as MovieDetails
-  console.log(666, '这里初始化服务端渲染，二次链接跳转浏览器端调用渲染')
 
   // We remove data we don't need because we pass `pageContext.movie` to
   // the client; we want to minimize what is sent over the network.

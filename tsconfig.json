@@ -5,7 +5,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+       "jsx": "preserve",
+    "target": "es2016"
   },
   "types": ["vite/client", "react/next", "react-dom/next"],
   "include": ["./**/*", "./package.json"],
