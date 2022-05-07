@@ -46,7 +46,7 @@ async function onBeforeRender() {
 function Page({ movies }: { movies: Movie[] }) {
   return (
     <>
-      <h1>Star Wars Movies</h1>
+      <h1>Star Wars Movies1</h1>
       <ol>
         {movies.map(({ id, title, release_date }) => (
           <li key={id}>
