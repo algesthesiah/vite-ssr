@@ -20,9 +20,6 @@ function Page({ name }: { name: string }) {
         </li>
       </ul>
       <div>{t`hello${a}`} </div>
-      <p>
-        Parameterized routes can be defined by exporting a route string in <code>*.page.route.js</code>.
-      </p>
     </>
   )
 }
