@@ -2,12 +2,14 @@ import ReactDOMServer from 'react-dom/server'
 import React from 'react'
 import { escapeInject } from 'vite-plugin-ssr'
 import type { PageContextBuiltIn } from 'vite-plugin-ssr'
+import { defaultLocale, dynamicActivate } from '@/helper/i18n'
 import { Layout } from './Layout'
 import { getSeo } from './getSeo'
 import type { PageContext } from './types'
 
 const passToClient = ['pageProps', 'documentProps', 'someAsyncProps', 'locale']
-function render(pageContext: PageContextBuiltIn & PageContext) {
+async function render(pageContext: PageContextBuiltIn & PageContext) {
+  await dynamicActivate(pageContext?.locale || defaultLocale)
   const { Page, pageProps } = pageContext
   // TODO: vite-plugin-ssr 待支持 renderToPipeableStream
   const stream = ReactDOMServer.renderToStaticNodeStream(

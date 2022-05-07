@@ -1,1 +1,1 @@
-/*eslint-disable*/export const messages={"hello{a}":["hello",["a"]]};
+/*eslint-disable*/export const messages={"hello{a}":["你好",["a"]],"indexpage{b}":["第一页",["b"]]};

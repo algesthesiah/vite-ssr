@@ -6,7 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: zh\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #: modules/common/hello/index.page.tsx:22
 msgid "hello{a}"
-msgstr ""
+msgstr "你好{a}"
+
+#: modules/common/star-wars/index/index.page.tsx:66
+msgid "indexpage{b}"
+msgstr "第一页{b}"

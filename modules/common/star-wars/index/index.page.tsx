@@ -1,4 +1,5 @@
 import React from 'react'
+import { t } from '@lingui/macro'
 import type { Movie, MovieDetails } from '../types'
 
 export { Page }
@@ -44,6 +45,7 @@ async function onBeforeRender() {
 }
 
 function Page({ movies }: { movies: Movie[] }) {
+  const b = 22
   return (
     <>
       <h1>Star Wars Movies1</h1>
@@ -61,6 +63,7 @@ function Page({ movies }: { movies: Movie[] }) {
       <p>
         Data can be fetched by using the <code>onBeforeRender()</code> hook.
       </p>
+      <div>{t`indexpage${b}`}</div>
     </>
   )
 }

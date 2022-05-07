@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOMClient from 'react-dom/client'
 import { useClientRouter } from 'vite-plugin-ssr/client/router'
 import type { PageContextBuiltInClient } from 'vite-plugin-ssr/client/router'
+import { defaultLocale, dynamicActivate } from '@/helper/i18n'
 import { Layout } from './Layout'
 import { getSeo } from './getSeo'
 import type { PageContext } from './types'
@@ -18,11 +19,12 @@ function onTransitionEnd() {
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 const { hydrationPromise } = useClientRouter({
-  render(pageContext: PageContextBuiltInClient & PageContext) {
+  async render(pageContext: PageContextBuiltInClient & PageContext) {
     const { Page, pageProps } = pageContext
 
     const container = document.getElementById('page-view')!
     if (pageContext.isHydration) {
+      await dynamicActivate(pageContext?.locale || defaultLocale)
       root = ReactDOMClient.hydrateRoot(
         container,
         <Layout pageContext={pageContext}>
@@ -33,6 +35,7 @@ const { hydrationPromise } = useClientRouter({
       if (!root) {
         root = ReactDOMClient.createRoot(container)
       }
+
       const app = (
         <Layout pageContext={pageContext}>
           <Page {...pageProps} />

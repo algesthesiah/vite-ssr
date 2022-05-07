@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { defaultLocale, dynamicActivate } from '@/helper/i18n'
+import React from 'react'
 import { I18nProvider } from '@lingui/react'
 import { i18n } from '@lingui/core'
 import { PageContextProvider } from './usePageContext'
@@ -67,10 +66,6 @@ function Logo() {
 }
 
 function Layout({ pageContext, children }: { pageContext: PageContext; children: React.ReactNode }) {
-  useEffect(() => {
-    // With this method we dynamically load the catalogs
-    dynamicActivate(pageContext?.locale || defaultLocale)
-  }, [pageContext?.locale])
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
