@@ -6,8 +6,7 @@ export const locales = {
   zh: '中文',
 }
 export const defaultLocale = 'en'
-// i18n.load(defaultLocale, {})
-// i18n.activate(defaultLocale)
+
 i18n.loadLocaleData({
   en: { plurals: en },
   zh: { plurals: zh },
