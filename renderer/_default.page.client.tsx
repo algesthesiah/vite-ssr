@@ -35,7 +35,7 @@ const { hydrationPromise } = useClientRouter({
       }
       const app = (
         <Layout pageContext={pageContext}>
-          <Page {...{ ...pageProps, ...{ nmb: 1 } }} />
+          <Page {...pageProps} />
         </Layout>
       )
       root.render(app)
