@@ -43,8 +43,7 @@ async function onBeforeRender() {
   }
 }
 
-function Page({ movies, nmb }: { movies: Movie[]; nmb: any }) {
-  console.log('nmb', nmb)
+function Page({ movies }: { movies: Movie[] }) {
   return (
     <>
       <h1>Star Wars Movies</h1>
