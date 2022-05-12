@@ -60,6 +60,7 @@
     "postcss": "8.3.5",
     "postcss-nested": "5.0.5",
     "rollup-plugin-visualizer": "5.5.0",
+    "stylelint": "13.13.0",
     "stylelint-plugin-standard": "~1.0.5",
     "vite": "^2.9.6",
     "vite-plugin-babel-macros": "^1.0.6",
