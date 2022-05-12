@@ -3,22 +3,22 @@ import { omitBy } from 'lodash'
 import { defineConfig, loadEnv, UserConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import react from '@vitejs/plugin-react'
-import { createStyleImportPlugin } from 'vite-plugin-style-import'
+// import { createStyleImportPlugin } from 'vite-plugin-style-import'
 import legacy from '@vitejs/plugin-legacy'
 import ssr from 'vite-plugin-ssr/plugin'
 import macrosPlugin from 'vite-plugin-babel-macros'
 
 // Packages we want in the vendor aka the deps needed in the entire app.
-const globalVendorPackages = ['react', 'react-dom', 'react-router-dom', '@arco-design/web-react']
+// const globalVendorPackages = ['react', 'react-dom', 'react-router-dom', '@arco-design/web-react']
 
-function renderChunks(deps: Record<string, string>) {
-  let chunks = {}
-  Object.keys(deps).forEach(key => {
-    if (globalVendorPackages.includes(key)) return
-    chunks[key] = [key]
-  })
-  return chunks
-}
+// function renderChunks(deps: Record<string, string>) {
+//   let chunks = {}
+//   Object.keys(deps).forEach(key => {
+//     if (globalVendorPackages.includes(key)) return
+//     chunks[key] = [key]
+//   })
+//   return chunks
+// }
 export default ({ mode }) => {
   process.env = {
     ...process.env,
@@ -31,18 +31,18 @@ export default ({ mode }) => {
         targets: ['defaults', 'not IE 11'],
       }),
       react(),
-      createStyleImportPlugin({
-        libs: [
-          // 如果没有你需要的 resolve，可以在 lib 内直接写，也可以给我们提供 PR
-          {
-            libraryName: '@arco-design/web-react',
-            esModule: true,
-            resolveStyle: name => {
-              return `@arco-design/web-react/es/${name}/style/css.js`
-            },
-          },
-        ],
-      }),
+      // createStyleImportPlugin({
+      //   libs: [
+      //     // TODO: 带改 arco 源码适配完美的按需加载
+      //     {
+      //       libraryName: '@arco-design/web-react',
+      //       esModule: true,
+      //       resolveStyle: name => {
+      //         return `@arco-design/web-react/es/${name}/style/css.js`
+      //       },
+      //     },
+      //   ],
+      // }),
       ssr(),
       tsconfigPaths(),
     ],
