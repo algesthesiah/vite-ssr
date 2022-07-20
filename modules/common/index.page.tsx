@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@arco-design/web-react'
+import { Button } from 'react-vant'
 import { t } from '@lingui/macro'
 
 export { Page }

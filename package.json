@@ -2,6 +2,7 @@
   "private": true,
   "author": "",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "prepare": "husky install",
     "dev": "nodemon --watch server --exec 'node server'",
@@ -33,6 +34,7 @@
     "nodemon": "^2.0.15",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-vant": "3.0.0-rc.3",
     "tailwindcss": "^3.0.24",
     "vite-plugin-ssr": "^0.4.9"
   },

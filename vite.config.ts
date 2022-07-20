@@ -1,5 +1,4 @@
 // https://vitejs.dev/config/
-import { omitBy } from 'lodash'
 import { defineConfig, loadEnv, UserConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import react from '@vitejs/plugin-react'
@@ -7,6 +6,7 @@ import react from '@vitejs/plugin-react'
 import legacy from '@vitejs/plugin-legacy'
 import ssr from 'vite-plugin-ssr/plugin'
 import macrosPlugin from 'vite-plugin-babel-macros'
+import { createStyleImportPlugin } from 'vite-plugin-style-import'
 
 // Packages we want in the vendor aka the deps needed in the entire app.
 // const globalVendorPackages = ['react', 'react-dom', 'react-router-dom', '@arco-design/web-react']
@@ -20,10 +20,7 @@ import macrosPlugin from 'vite-plugin-babel-macros'
 //   return chunks
 // }
 export default ({ mode }) => {
-  process.env = {
-    ...process.env,
-    ...omitBy(loadEnv(mode, process.cwd()), Boolean),
-  }
+  loadEnv(mode, process.cwd())
   return defineConfig({
     plugins: [
       macrosPlugin(),
@@ -31,18 +28,20 @@ export default ({ mode }) => {
         targets: ['defaults', 'not IE 11'],
       }),
       react(),
-      // createStyleImportPlugin({
-      //   libs: [
-      //     // TODO: 带改 arco 源码适配完美的按需加载
-      //     {
-      //       libraryName: '@arco-design/web-react',
-      //       esModule: true,
-      //       resolveStyle: name => {
-      //         return `@arco-design/web-react/es/${name}/style/css.js`
-      //       },
-      //     },
-      //   ],
-      // }),
+      createStyleImportPlugin({
+        libs: [
+          {
+            // libraryNameChangeCase: 'camelCase',
+            libraryName: 'react-vant',
+            resolveStyle: name => {
+              if (['area', 'config-provider', 'datetime-picker', 'hooks'].includes(name)) {
+                return ''
+              }
+              return `react-vant/es/${name}/style/index.css`
+            },
+          },
+        ],
+      }),
       ssr(),
       tsconfigPaths(),
     ],

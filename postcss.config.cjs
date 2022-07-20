@@ -1,6 +1,6 @@
 module.exports = {
   plugins: {
-    tailwindcss: { config: __dirname + '/tailwind.config.js' },
+    tailwindcss: { config: __dirname + '/tailwind.config.cjs' },
     autoprefixer: {},
     'postcss-nested': {},
   },

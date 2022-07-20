@@ -1,6 +1,12 @@
-const express = require('express')
-const { renderPage } = require('vite-plugin-ssr')
-const { extractLocale } = require('./utils/locales')
+import express from 'express'
+import { renderPage } from 'vite-plugin-ssr'
+import { extractLocale } from './utils/locales.mjs'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
+import { createServer } from 'vite'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 const isProduction = process.env.NODE_ENV === 'production'
 const root = `${__dirname}/..`
@@ -13,8 +19,7 @@ async function startServer() {
   if (isProduction) {
     app.use(express.static(`${root}/${outDir}/client`))
   } else {
-    const vite = require('vite')
-    viteDevServer = await vite.createServer({
+    viteDevServer = await createServer({
       root,
       server: { middlewareMode: true },
     })
@@ -32,10 +37,9 @@ async function startServer() {
       console.error(errorWhileRendering)
     }
     if (!httpResponse) return next()
-    const stream = await httpResponse.getNodeStream()
     const { statusCode, contentType } = httpResponse
     res.status(statusCode).type(contentType)
-    stream.pipe(res)
+    httpResponse.pipe(res)
 
     //  const pageContext = await renderPage(pageContextInit)
     //  const { httpResponse } = pageContext

@@ -4,13 +4,12 @@
     "composite": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "renderer/*": ["./renderer/*"],
     },
-       "jsx": "preserve",
-    "target": "es2016"
+    "types": ["vite/client", "react/next", "react-dom/next"],
   },
-  "types": ["vite/client", "react/next", "react-dom/next"],
-  "include": ["./**/*", "./package.json"],
+  "include": ["./**/*", "./package.json", "./src/**/*"],
   "exclude": ["node_modules", "assets", "dist"],
   "extensions": [".ts", ".tsx", ".js", ".jsx"]
 }
