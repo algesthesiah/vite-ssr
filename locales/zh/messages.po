@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: modules/common/index.page.tsx:8
+msgid "hello"
+msgstr "你好好"
+
 #: modules/common/hello/index.page.tsx:22
 msgid "hello{a}"
 msgstr "你好{a}"

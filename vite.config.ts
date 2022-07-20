@@ -66,5 +66,7 @@ export default ({ mode }) => {
         generateScopedName: '[local]-[hash:base64:5]',
       },
     },
+    base: '/',
+    baseAsset: '/',
   } as UserConfig)
 }

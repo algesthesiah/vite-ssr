@@ -11,4 +11,7 @@
   },
   "css.validate": false,
   "stylelint.enable": true,
+  "i18n-ally.localesPaths": [
+    "locales"
+  ],
 }

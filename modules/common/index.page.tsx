@@ -1,8 +1,9 @@
 import React from 'react'
 import { Button } from '@arco-design/web-react'
+import { t } from '@lingui/macro'
 
-export default IndexPage
+export { Page }
 
-function IndexPage() {
-  return <Button type="primary">12321321</Button>
+function Page() {
+  return <Button type="primary">{t`hello`}</Button>
 }
