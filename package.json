@@ -63,7 +63,7 @@
     "stylelint": "13.13.0",
     "stylelint-plugin-standard": "~1.0.5",
     "terser": "^5.14.2",
-    "vite": "3.0.2",
+    "vite": "2.9.14",
     "vite-plugin-babel-macros": "^1.0.6",
     "vite-plugin-style-import": "^2.0.0",
     "vite-tsconfig-paths": "^3.4.1"
