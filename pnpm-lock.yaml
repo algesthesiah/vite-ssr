@@ -39,6 +39,7 @@ specifiers:
   stylelint: 13.13.0
   stylelint-plugin-standard: ~1.0.5
   tailwindcss: ^3.0.24
+  terser: ^5.14.2
   vite: 3.0.2
   vite-plugin-babel-macros: ^1.0.6
   vite-plugin-ssr: ^0.4.9
@@ -87,6 +88,7 @@ devDependencies:
   rollup-plugin-visualizer: 5.5.0_rollup@2.77.0
   stylelint: 13.13.0
   stylelint-plugin-standard: 1.0.5
+  terser: 5.14.2
   vite: 3.0.2_terser@5.14.2
   vite-plugin-babel-macros: 1.0.6_vite@3.0.2
   vite-plugin-style-import: 2.0.0_vite@3.0.2
@@ -7039,7 +7041,7 @@ packages:
     dev: true
 
   /source-map/0.5.7:
-    resolution: {integrity: sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=}
+    resolution: {integrity: sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==}
     engines: {node: '>=0.10.0'}
     dev: true
 
