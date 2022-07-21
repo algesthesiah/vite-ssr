@@ -1,12 +1,8 @@
-import express from 'express'
-import { renderPage } from 'vite-plugin-ssr'
-import { extractLocale } from './utils/locales.mjs'
-import { fileURLToPath } from 'url'
-import { dirname } from 'path'
-import { createServer } from 'vite'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const express = require('express')
+const cookieParser = require('cookie-parser')
+const { createServer } = require('vite')
+const { renderPage } = require('vite-plugin-ssr')
+const { extractLocale } = require('./utils/locales')
 
 const isProduction = process.env.NODE_ENV === 'production'
 const root = `${__dirname}/..`
@@ -40,12 +36,6 @@ async function startServer() {
     const { statusCode, contentType } = httpResponse
     res.status(statusCode).type(contentType)
     httpResponse.pipe(res)
-
-    //  const pageContext = await renderPage(pageContextInit)
-    //  const { httpResponse } = pageContext
-    //  if (!httpResponse) return next()
-    //  const { body, statusCode, contentType } = httpResponse
-    //  res.status(statusCode).type(contentType).send(body)
   })
 
   const port = 3000

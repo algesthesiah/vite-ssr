@@ -1,7 +1,7 @@
 const locales = ['en-US', 'zh-CN']
 const localeDefault = locales[0]
 const regUrl = /-.*/g
-export function extractLocale(url) {
+function extractLocale(url) {
   const urlPaths = url.split('/')
 
   let locale
@@ -21,3 +21,6 @@ export function extractLocale(url) {
   return { locale, urlWithoutLocale }
 }
 
+module.exports = {
+  extractLocale,
+}

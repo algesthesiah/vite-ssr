@@ -2,7 +2,6 @@
   "private": true,
   "author": "",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "prepare": "husky install",
     "dev": "nodemon --watch server --exec 'node server'",
@@ -25,6 +24,7 @@
     "@tailwindcss/line-clamp": "^0.4.0",
     "@vitejs/plugin-react": "^1.3.1",
     "axios": "^0.27.2",
+    "cookie-parser": "^1.4.6",
     "cross-fetch": "^3.1.5",
     "express": "^4.18.0",
     "lodash": "^4.17.21",
